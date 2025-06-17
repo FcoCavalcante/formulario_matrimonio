@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedido de pergaminho com bênção papal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <h1>Pedido de pergaminho com Bênção Papal</h1>
+  <h2 class="subtitulo">Matrimônio | Aniversário de Matrimônio</h2>
+
+  <form id="form-pedido">
+    <!-- Dados do cliente -->
+    <label for="solicitante">Responsável pelo pedido:</label>
+    <input type="text" id="solicitante" name="solicitante" required placeholder="Nome completo de quem está fazendo o pedido" />
+
+    <label for="nomeEsposo">Nome do esposo:</label>
+    <input type="text" id="nomeEsposo" name="nomeEsposo" placeholder="Nome completo do esposo" />
+
+    <label for="nomeEsposa">Nome da esposa:</label>
+    <input type="text" id="nomeEsposa" name="nomeEsposa" placeholder="Nome completo da esposa" />
+
+    <label for="motivo">Motivo ou circunstância para a bênção:</label>
+    <select id="motivo" name="motivo" required>
+      <option value="" disabled selected>Escolha o motivo</option>
+      <option value="MATRIMÔNIO">MATRIMÔNIO</option>
+      <option value="ANIVERSÁRIO DE MATRIMÔNIO">ANIVERSÁRIO DE MATRIMÔNIO</option>
+    </select>
+
+    <div id="anos-matrimonio-container" style="display: none;">
+      <label for="anosMatrimonio">Qual aniversário de matrimônio?</label>
+      <input type="text" id="anosMatrimonio" name="anosMatrimonio" placeholder="Aniversário (10°, 15°, 20°, 25°, 30°, 35°, 40°, 45°, 50°, 55°, 60°, 65°, 70°, 75°, 80°) de Matrimônio." />
+    </div>
+
+    <label for="data">Data da cerimônia (o pedido somente será aceito se feito no interlavo entre 4 meses antes e 6 meses depois desta data - Regras do Vaticano):</label>
+    <input type="date" id="data" name="data" required />
+
+    <label for="igreja">Nome da igreja:</label>
+    <input type="text" id="igreja" name="igreja" required placeholder="Ex.: Paróquia/Capela São Pedro" />
+
+    <label for="localidade">Localidade:</label>
+    <input type="text" id="localidade" name="localidade" required placeholder="Cidade da igreja. Ex.: Porto Alegre" />
+
+    <label for="endereco">Endereço completo (cliente):</label>
+    <input type="text" id="endereco" name="endereco" required placeholder="Rua, n°, complemento, bairro, cidade, estado, CEP" />
+
+    <label for="email">Email (cliente):</label>
+    <input type="email" id="email" name="email" required placeholder="Ex: seuemail@email.com" />
+
+    <label for="telefone">Telefone (WhatsApp) (cliente):</label>
+    <input type="tel" id="telefone" name="telefone" required pattern="[0-9]{11,15}" placeholder="Ex: 5511999999999" />
+
+    <!-- Produtos -->
+    <fieldset class="produtos">
+      <legend>Escolha o modelo do pergaminho (clique nas imagens para ampliá-las):</legend>
+
+      <!-- Substitua os src pelas imagens locais -->
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo B4" data-preco="21" required />
+        <img src="img\Modelo B4 (29,5 x 39,5 cm) - REF BPCC-B4.jpg" alt="Modelo B4" title="Modelo B4" />
+        Modelo B4 (29,5 x 39,5 cm) - €21,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo C7" data-preco="25" />
+        <img src="img\Modelo C7 (30 x 46 cm) - REF BPCC-C7.jpg" alt="Modelo C7" />
+        Modelo C7 (30 x 46 cm) - €25,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo G" data-preco="28" />
+        <img src="img\Modelo G (32,5 x 48 cm) - REF BPCC-G.jpg" alt="Modelo G" />
+        Modelo G (32,5 x 48 cm) - €28,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo GP" data-preco="20" />
+        <img src="img\Modelo GP (25 x 35 cm) - REF BPCC-GP.jpg" alt="Modelo GP" />
+        Modelo GP (25 x 35 cm) - €20,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo M" data-preco="25" />
+        <img src="img\Modelo M (40,5 x 32 cm) - REF MATR-M.jpg" alt="Modelo M" />
+        Modelo M (40,5 x 32 cm) - €25,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo M3" data-preco="25" />
+        <img src="img\Modelo M3 (40,5 x 32 cm) - REF MATR-M3.jpg" alt="Modelo M3" />
+        Modelo M3 (40,5 x 32 cm) - €25,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo R3" data-preco="25" />
+        <img src="img\Modelo R3 (40,5 x 32 cm) - REF BPCC-R3.jpg" alt="Modelo R3" />
+        Modelo R3 (40,5 x 32 cm) - €25,00
+      </label>
+
+      <label class="produto-item">
+        <input type="radio" name="produto" value="Modelo S" data-preco="25" />
+        <img src="img\Modelo S (42 x 33 cm) - REF MATR-S.jpg" alt="Modelo S" />
+        Modelo S (42 x 33 cm) - €25,00
+      </label>
+    </fieldset>
+
+    <!-- Informações adicionais -->
+    <div id="prazos">
+      O tempo necessário para recebermos o pergaminho é cerca de 30 dias úteis a partir da postagem (correio expresso DHL - Vaticano), que deverá ser consultado junto da AbbaPaiPhoto.
+    </div>
+
+    <div id="dados_corretos">
+      Tenha atenção aos dados inseridos no formulário. Não nos resposabilizamos por dados inseridos errados. Após o envio do pedido para o Vaticano, somente poderá solicitar um novo pergaminho com os dados corretos tendo um novo custo por isso.
+    </div>
+
+    <div class="info-custos">
+      Custos adicionais:
+      <ul>
+        <li>Envio (DHL - Logística parceira do Vaticano) - €25,00.</li>
+        <li>Intermediação do serviço (AbbaPaiPhoto) - R$150,00.</li>
+        <li>Alíquota do IOF (de acordo com a operadora de crédito).</li>
+        <li>Taxas da operadora de crédito para compras no débito e crédito (até 6x) que serão adicionadas no momento do pagamento, durante atendimento pelo whatsapp.</li>
+      </ul>
+    </div>
+
+    <!-- Cotação atual do euro -->
+    <div id="cotacao-euro">
+      Carregando cotação do Euro...
+    </div>
+
+    <div id="valor-final">Valor final estimado: R$ 0,00 (deve ser confirmado via WhatsApp)</div>
+
+    <!-- Confirmações obrigatórias -->
+    <div class="confirmacoes">
+      <label>
+        <input type="checkbox" id="lgpd" required />
+        <strong>Estou ciente do uso dos meus dados conforme a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei n° 13.709/2018).</strong>
+      </label>
+      <label>
+        <input type="checkbox" id="aviso" required />
+        <strong>Estou ciente que os custos indicados para a concessão da Bênção Papal referem-se unicamente ao diploma (pergaminho), aos gastos com a sua preparação e expedição e a uma contribuição para a caridade do Papa (já que a benção em si é gratuita). Além disso, também estou ciente de que todas as entradas que chegam ao Vaticano, sobretudo como ofertas para a concessão dos diplomas com a Bênção, são inteiramente vertidas para a caridade, diretamente, para com os indigentes que todos os dias, nas suas necessidades, estendem a mão para o Sucessor de Pedro. </strong>
+      </label>
+      <label>
+        <input type="checkbox" id="intermediação" required />
+        <strong>Estou ciente que a taxa de intermediação da AbbaPaiPhoto, na solicitação da Benção Papal, é um serviço à parte do oferecido pelo Vaticano.</strong>
+      </label>
+    </div>
+
+    <button type="submit">Enviar Pedido via WhatsApp</button>
+  </form>
+    <script src="script.js"></script>
+
+  <!-- Modal de confirmação -->
+<div id="modal-confirmacao" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h2>Confirme seus dados</h2>
+    <pre id="resumo-dados"></pre>
+    <div class="modal-botoes">
+      <button id="btn-cancelar">Revisar</button>
+      <button id="btn-confirmar">Confirmar e Enviar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
