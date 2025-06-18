@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pedido de pergaminho com bênção papal</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CD6ECKN9H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1CD6ECKN9H');
+  </script>
 </head>
+
 <body>
   <div class="overlay" id="overlay"></div>
 
@@ -35,7 +43,7 @@
       <input type="text" id="anosMatrimonio" name="anosMatrimonio" placeholder="Aniversário (10°, 15°, 20°, 25°, 30°, 35°, 40°, 45°, 50°, 55°, 60°, 65°, 70°, 75°, 80°) de Matrimônio." />
     </div>
 
-    <label for="data">Data da cerimônia (o pedido somente será aceito se feito no interlavo entre 4 meses antes e 6 meses depois desta data - Regras do Vaticano):</label>
+    <label for="data">Data da cerimônia (o pedido somente será aceito se feito no intervalo entre 4 meses antes e 6 meses depois desta data - Regras do Vaticano):</label>
     <input type="date" id="data" name="data" required />
 
     <label for="igreja">Nome da igreja:</label>
@@ -51,7 +59,7 @@
     <input type="email" id="email" name="email" required placeholder="Ex: seuemail@email.com" />
 
     <label for="telefone">Telefone (WhatsApp) (cliente):</label>
-    <input type="tel" id="telefone" name="telefone" required pattern="[0-9]{11,15}" placeholder="Ex: 5511999999999" />
+    <input type="tel" id="telefone" name="telefone" inputmode="numeric" required pattern="[0-9]{11,15}" placeholder="Ex: 5511999999999" />
 
     <!-- Produtos -->
     <fieldset class="produtos">
@@ -60,49 +68,49 @@
       <!-- Substitua os src pelas imagens locais -->
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo B4" data-preco="21" required />
-        <img src="img\Modelo B4 (29,5 x 39,5 cm) - REF BPCC-B4.jpg" alt="Modelo B4" title="Modelo B4" />
+        <img src="img/Modelo B4 (29,5 x 39,5 cm) - REF BPCC-B4.jpg" alt="Modelo B4" title="Modelo B4" />
         Modelo B4 (29,5 x 39,5 cm) - €21,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo C7" data-preco="25" />
-        <img src="img\Modelo C7 (30 x 46 cm) - REF BPCC-C7.jpg" alt="Modelo C7" />
+        <img src="img/Modelo C7 (30 x 46 cm) - REF BPCC-C7.jpg" alt="Modelo C7" />
         Modelo C7 (30 x 46 cm) - €25,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo G" data-preco="28" />
-        <img src="img\Modelo G (32,5 x 48 cm) - REF BPCC-G.jpg" alt="Modelo G" />
+        <img src="img/Modelo G (32,5 x 48 cm) - REF BPCC-G.jpg" alt="Modelo G" />
         Modelo G (32,5 x 48 cm) - €28,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo GP" data-preco="20" />
-        <img src="img\Modelo GP (25 x 35 cm) - REF BPCC-GP.jpg" alt="Modelo GP" />
+        <img src="img/Modelo GP (25 x 35 cm) - REF BPCC-GP.jpg" alt="Modelo GP" />
         Modelo GP (25 x 35 cm) - €20,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo M" data-preco="25" />
-        <img src="img\Modelo M (40,5 x 32 cm) - REF MATR-M.jpg" alt="Modelo M" />
+        <img src="img/Modelo M (40,5 x 32 cm) - REF MATR-M.jpg" alt="Modelo M" />
         Modelo M (40,5 x 32 cm) - €25,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo M3" data-preco="25" />
-        <img src="img\Modelo M3 (40,5 x 32 cm) - REF MATR-M3.jpg" alt="Modelo M3" />
+        <img src="img/Modelo M3 (40,5 x 32 cm) - REF MATR-M3.jpg" alt="Modelo M3" />
         Modelo M3 (40,5 x 32 cm) - €25,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo R3" data-preco="25" />
-        <img src="img\Modelo R3 (40,5 x 32 cm) - REF BPCC-R3.jpg" alt="Modelo R3" />
+        <img src="img/Modelo R3 (40,5 x 32 cm) - REF BPCC-R3.jpg" alt="Modelo R3" />
         Modelo R3 (40,5 x 32 cm) - €25,00
       </label>
 
       <label class="produto-item">
         <input type="radio" name="produto" value="Modelo S" data-preco="25" />
-        <img src="img\Modelo S (42 x 33 cm) - REF MATR-S.jpg" alt="Modelo S" />
+        <img src="img/Modelo S (42 x 33 cm) - REF MATR-S.jpg" alt="Modelo S" />
         Modelo S (42 x 33 cm) - €25,00
       </label>
     </fieldset>
@@ -151,7 +159,7 @@
 
     <button type="submit">Enviar Pedido via WhatsApp</button>
   </form>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
   <!-- Modal de confirmação -->
 <div id="modal-confirmacao" class="modal" style="display: none;">
